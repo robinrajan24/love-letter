@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>A Little Book About You — For Ponnnahh 😘, Kuttapie 🥰 & Kuttuzz 💖</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F5EDE4;--ui:#483738;--paper:#FFF9F0;--blush:#F0DCD9;--rose:#C58F96;--burg:#7B4652;--ink:#483738;
+--serif:"Cormorant Garamond","Playfair Display",Georgia,serif;--sans:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;--hand:Caveat,"Segoe Script","Bradley Hand",cursive;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#2a2021;--ui:#F0DCD9}}
+:root[data-theme="dark"]{--bg:#2a2021;--ui:#F0DCD9}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+html,body{height:100%;margin:0}
+body{background:var(--bg);color:var(--ui);font-family:var(--sans);overflow:hidden}
+[hidden]{display:none!important}
+button{font:inherit;cursor:pointer}
+:focus-visible{outline:2px solid var(--rose);outline-offset:3px}
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+
+/* Intro */
+#intro{height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px;text-align:center;padding:20px;animation:rise .9s ease both;transition:opacity .35s}
+.closed{perspective:1400px;width:min(60vw,250px);aspect-ratio:5/7;position:relative;filter:drop-shadow(0 22px 26px rgba(60,30,35,.35))}
+.closed:before{content:"";position:absolute;inset:3px -6px -4px 3px;background:repeating-linear-gradient(#fff9f0 0 2px,#eadccc 2px 3px);border-radius:2px 5px 5px 2px}
+.cv{position:absolute;inset:0;background:var(--burg);color:#FFF9F0;border-radius:3px 7px 7px 3px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:26px;
+transform-origin:left center;transition:transform .8s cubic-bezier(.5,0,.2,1);box-shadow:inset 8px 0 10px -6px rgba(0,0,0,.35)}
+.cv:after{content:"";position:absolute;inset:12px;border:1px solid rgba(255,249,240,.4);border-radius:2px;pointer-events:none}
+.cv h1{font:600 clamp(20px,6vw,27px)/1.15 var(--serif);margin:0}
+.cv p{font:500 17px var(--hand);margin:0;opacity:.85}
+.opening{animation:none!important}.opening .cv{transform:rotateY(-115deg)}
+#open{background:var(--burg);color:#FFF9F0;border:0;border-radius:99px;padding:13px 30px;font-size:15px;letter-spacing:.04em;transition:transform .2s,background .2s}
+#open:hover{background:#633843;transform:translateY(-1px)}#open:active{transform:scale(.97)}
+#intro small{opacity:.7;font-size:13px}
+
+/* Stage */
+#stage{height:100%;height:100dvh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:6px;animation:fade .6s ease both}
+#wrap{position:relative}
+#wrap:before{content:"";position:absolute;left:3%;right:3%;bottom:-1%;height:7%;background:rgba(50,25,30,.4);filter:blur(16px);pointer-events:none}
+nav{display:flex;align-items:center;gap:18px;font-size:14px;padding:2px 0}
+nav button{width:46px;height:46px;border-radius:50%;border:1px solid var(--rose);background:transparent;color:var(--ui);font-size:20px;line-height:1;transition:background .2s,transform .2s;touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+nav button:hover{background:rgba(197,143,150,.25)}nav button:active{transform:scale(.94)}
+nav button:disabled{opacity:.3;cursor:default}
+#count{min-width:64px;text-align:center;font-variant-numeric:tabular-nums;font-weight:500}
+
+/* Each page = one full spread: a photo side + a text side */
+.page{will-change:transform;backface-visibility:hidden;-webkit-backface-visibility:hidden;background:var(--paper);color:var(--ink);overflow:hidden;line-height:1.45}
+.page.cv1{background:var(--burg);color:#FFF9F0}
+.in{width:100%;height:100%;display:grid;position:relative;--k:1.55;--pad:calc(5.5*var(--c));font-size:calc(var(--k)*calc(1*var(--c)))}
+.wide .in{grid-template-columns:1fr 1fr}
+.wide .in:after{content:"";position:absolute;top:0;bottom:0;left:50%;width:calc(7*var(--c));transform:translateX(-50%);background:linear-gradient(90deg,transparent,rgba(90,50,40,.13) 50%,transparent);pointer-events:none}
+.wide .R .pic{order:2}
+
+/* Tall / Mobile Layout */
+.tall .in{grid-template-columns:1fr;grid-template-rows:52% 48%;--k:3.4;--pad:calc(3*var(--c))}
+.pic{padding:var(--pad);display:flex;justify-content:center;align-items:center;min-width:0;min-height:0}
+.tall .pic{padding:calc(2.5*var(--c)) calc(3*var(--c)) calc(1*var(--c));overflow:hidden}
+.tall .ph{height:100%;width:auto;aspect-ratio:3.4/4;max-width:88%;margin:0 auto}
+
+.txt{padding:var(--pad);display:flex;flex-direction:column;justify-content:center;min-width:0;min-height:0}
+.tall .txt{padding:calc(1*var(--c)) calc(4*var(--c)) calc(2*var(--c));justify-content:center;align-items:center;text-align:center}
+.mid .txt{align-items:center;text-align:center}
+
+h2{font:600 clamp(18px,calc(var(--k)*calc(2*var(--c))),26px)/1.15 var(--serif);color:var(--burg);margin:0 0 .35em}
+.cv1 h2{color:#FFF9F0}
+.hand{font:500 clamp(14px,1.25em,17px)/1.2 var(--hand);color:var(--rose)}
+.cv1 .hand{color:#F0DCD9}
+p{margin:0 0 .45em;font-size:clamp(13px,1em,15px);line-height:1.45}
+.q{font:italic 500 clamp(14px,1.25em,17px)/1.35 var(--serif);color:var(--burg);margin:0 0 .45em}
+ol,ul{margin:0 auto;padding:0;list-style:none;display:flex;flex-direction:column;gap:.4em;width:100%;max-width:92%}
+li{display:flex;gap:.6em;align-items:baseline;text-align:left;font-size:clamp(12.5px,0.95em,14.5px);line-height:1.35}
+li i{font:italic 600 1.3em var(--serif);color:var(--rose);min-width:1em}
+.rule{width:calc(10*var(--c));height:1px;background:var(--rose);margin:.45em auto}
+.date{font:600 1.8em var(--serif);color:var(--burg)}
+svg.h{width:2.2em;height:2.2em;color:var(--rose);margin-bottom:.3em}
+.cv1 svg.h{color:#F0DCD9}
+.sig{margin-top:.45em}
+
+/* Photos */
+.ph{margin:0;background:#fff;padding:calc(1.2*var(--c));box-shadow:0 4px 14px rgba(70,40,40,.22);display:flex;flex-direction:column;width:100%;height:100%;min-height:0;border-radius:2px}
+.box{position:relative;flex:1;background:var(--blush);overflow:hidden;min-height:0;border-radius:1px}
+.box span{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;text-align:center;padding:8px;font:italic 500 1em var(--serif);color:var(--burg);opacity:.75}
+.box img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
+.ph figcaption{font:500 clamp(13px,1.15em,16px) var(--hand);color:var(--burg);text-align:center;padding-top:.3em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+@media (hover:hover){.box img{transition:transform .5s}.ph:hover .box img{transform:scale(1.04)}.busy .ph:hover .box img{transform:none}}
+
+/* Final */
+.fin{display:flex;flex-direction:column;align-items:center;text-align:center;width:100%}
+.fin>*{opacity:0}.on .fin>*{animation:rise 1s ease both}.on .fin>*:nth-child(2){animation-delay:.15s}.on .fin>*:nth-child(3){animation-delay:.3s}
+.again{background:var(--burg);color:#FFF9F0;border:0;border-radius:99px;padding:.55em 1.6em;font-size:clamp(14px,1em,16px);touch-action:manipulation;cursor:pointer;margin-top:.4em}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.fin>*{opacity:1}}
+</style>
+</head>
+<body>
+
+<main id="intro">
+  <div class="closed"><div class="cv"><h1>A Little Book About You</h1><p>Made with all my love, for Ponnnahh 😘</p></div></div>
+  <button id="open">Open Your Book, Kuttapie 🥰</button>
+  <small>Click or drag a page corner to turn it.</small>
+</main>
+
+<section id="stage" hidden>
+  <div id="wrap"></div>
+  <nav aria-label="Book navigation">
+    <button id="prev" aria-label="Previous page">&#8249;</button>
+    <span id="count" aria-live="polite">1 / 12</span>
+    <button id="next" aria-label="Next page">&#8250;</button>
+  </nav>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/page-flip@2.0.7/dist/js/page-flip.browser.js"></script>
+<script>
+/* ================= CONTENT FOR MY SPECIAL ONE ================= */
+const C = {
+  herName: "Ponnnahh 😘",
+  myName:  "With All My Love",
+  img: {
+    cover: "cover-img.png",
+    dedication: "img-1.jpg",
+    beginning: "img-2.jpg",
+    loves: "img-3.jpg",
+    smile: "img-4.jpg",
+    memories: "img-5.jpg",
+    words: "img-6.jpg",
+    letter: "img-7.jpg",
+    thanks: "img-8.jpg",
+    future: "img-9.jpg",
+    promise: "img-10.jpg",
+    final: "cover-img.png"
+  }
+};
+/* =========================================================== */
+
+const heart='<svg class="h" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M12 21s-7-4.5-9.5-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.5 6C19 16.5 12 21 12 21z"/></svg>';
+const ph=(src,alt,cap='',st='')=>`<figure class="ph ${st}"><div class="box"><span>${alt}</span><img src="${src}" alt="${alt}" onerror="this.remove()"></div>${cap?`<figcaption>${cap}</figcaption>`:''}</figure>`;
+const list=(a,fn)=>a.map(fn).join('');
+// P(side the photo sits on, photo html, text html, extra classes)
+const P=(side,photo,text,cls='',page='')=>`<div class="page ${page}"><div class="in ${side} ${cls}"><div class="pic">${photo}</div><div class="txt">${text}</div></div></div>`;
+const I=C.img;
+
+const pages=[
+ // 1. Front Cover (cover-img.png)
+ P('L',ph(I.cover,'Cover photo','My dearest Ponnnahh 😘'),`${heart}<h2 style="font-size:calc(var(--k)*calc(3*var(--c)))">A Little Book About You</h2><div class="rule"></div><div class="hand">Made with all my love, for Kuttuzz 💖</div>`,'mid','cv1'),
+
+ // 2. Dedication (img-1.jpg)
+ P('R',ph(I.dedication,'For Kuttuzz','Forever special, Kuttuzz 💖'),`<div class="hand">For my sweet Kuttapie 🥰</div><h2>Before You Turn the Page</h2><div class="rule"></div><div class="q">“Out of everyone in this world, my heart chose you.”</div><p>Every page here is a little piece of my love for you, Ponnnahh 😘.</p><div class="hand sig">Forever yours</div>`,'mid'),
+
+ // 3. Beginning (img-2.jpg)
+ P('L',ph(I.beginning,'Our beginning','Where our story began'),`<div class="hand">Our Journey</div><h2>The Day We Began</h2><div class="rule" style="margin-left:0"></div><div class="q">“The moment you came into my life, everything felt brighter.”</div><p>Meeting you was the sweetest turning point in my life, Kuttapie 🥰.</p>`),
+
+ // 4. Things I Love (img-3.jpg)
+ P('R',ph(I.loves,'Things I love about you','What I adore about you'),`<div class="hand">Little things I love</div><h2>Why You Are Special</h2><ul><li><span class="hand">♡</span><span>Your cute laugh that melts away all my stress.</span></li><li><span class="hand">♡</span><span>Your soft, kind, and beautiful heart.</span></li><li><span class="hand">♡</span><span>The adorable way you look at me, Kuttuzz 💖.</span></li><li><span class="hand">♡</span><span>How peaceful and happy I feel right beside you.</span></li></ul>`),
+
+ // 5. Smile (img-4.jpg)
+ P('L',ph(I.smile,'Your smile','My favorite view, Kuttapie 🥰'),`<div class="hand">Pure sunshine</div><h2>Your Smile</h2><div class="rule"></div><div class="q">“Seeing you smile is the best part of my day.”</div><p>Keep smiling always, Ponnnahh 😘. It’s the prettiest thing in the universe.</p>`,'mid'),
+
+ // 6. Memories (img-5.jpg)
+ P('R',ph(I.memories,'Memories with you','Moments I hold close'),`<div class="hand">Treasured moments</div><h2>Memories With You</h2><ul><li><span class="hand">♡</span><span>Late night talks where hours felt like minutes.</span></li><li><span class="hand">♡</span><span>Sharing silly jokes and smiling for no reason.</span></li><li><span class="hand">♡</span><span>Every sweet hug that felt like coming home.</span></li></ul><div class="hand sig">Every second with you is precious, Kuttuzz 💖.</div>`),
+
+ // 7. Words (img-6.jpg)
+ P('L',ph(I.words,'Words for you','Always on my mind, Kuttapie 🥰'),`<div class="hand">From my heart</div><h2>Words For You</h2><div class="q">“You are my safe place and my happiest thought.”</div><div class="q">“I never get tired of loving you, Ponnnahh 😘.”</div><div class="q">“You make ordinary moments feel like magic.”</div>`),
+
+ // 8. Letter (img-7.jpg)
+ P('R',ph(I.letter,'A quiet note','From my heart to yours'),`<div class="hand">A little note</div><h2>If I Could Tell You One Thing</h2><div class="q">“You mean more to me than words could ever explain.”</div><p>No matter where life takes us, I will always choose you, my dear Kuttapie 🥰.</p><div class="hand sig" style="text-align:right">Yours, always & forever</div>`),
+
+ // 9. Thanks (img-8.jpg)
+ P('L',ph(I.thanks,'Thankful for you','So lucky to have you'),`<div class="hand">Grateful for you</div><h2>Thank You, Kuttuzz 💖</h2><ul><li><span class="hand">♡</span><span>Thank you for choosing me every day.</span></li><li><span class="hand">♡</span><span>Thank you for your warmth, care, and kindness.</span></li><li><span class="hand">♡</span><span>Thank you for making life so colorful and happy.</span></li><li><span class="hand">♡</span><span>Thank you simply for being you, Ponnnahh 😘.</span></li></ul>`),
+
+ // 10. Future (img-9.jpg)
+ P('R',ph(I.future,'Our future','Looking ahead together'),`<div class="hand">Our tomorrow</div><h2>Looking Forward</h2><ul><li><span class="hand">♡</span><span>New adventures and exploring places together.</span></li><li><span class="hand">♡</span><span>Cozy evenings talking and laughing for hours.</span></li><li><span class="hand">♡</span><span>Holding your hand through everything, Kuttapie 🥰.</span></li></ul>`),
+
+ // 11. Promise (img-10.jpg)
+ P('L',ph(I.promise,'My promise','My sacred vow'),`${heart}<div class="hand">My forever vow</div><h2>My Promise To You</h2><div class="q">“I promise to stand by your side, care for you, and love you through everything.”</div><p>You will never have to face anything alone, Kuttuzz 💖.</p><div class="hand sig">Forever with you, Ponnnahh 😘</div>`,'mid'),
+
+ // 12. Final / Closing (cover-img.png)
+ P('R',ph(I.final,'Our forever','Our forever, Ponnnahh 😘'),`<div class="hand">Only the beginning</div><h2>Our Story Continues</h2><div class="rule"></div><div class="fin"><div class="q">“This is just the beginning of our beautiful journey.”</div><p>I love you endlessly, my sweet Kuttapie 🥰.</p>${heart}<div><button class="again">Read Again, Kuttuzz 💖</button></div></div>`,'mid')
+];
+
+const $=id=>document.getElementById(id), wrap=$('wrap');
+const reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+let pf,cur=0,mode,busy=false;
+const pick=()=>(innerWidth<720||innerHeight>innerWidth*1.05)?'tall':'wide';
+const ratio=()=>{
+  if(mode==='tall'){
+    const maxW = Math.min(innerWidth * 0.94, 460);
+    const maxH = Math.max(300, innerHeight - 80);
+    return Math.min(0.66, Math.max(0.55, maxW / maxH));
+  }
+  return 1.43;
+};
+
+function size(){ // one page = one full spread; fit it to the screen
+  const r = ratio();
+  let w, h;
+  if(mode === 'tall'){
+    const maxH = Math.min(innerHeight - 80, 760);
+    const maxW = Math.min(innerWidth * 0.94, 460);
+    w = Math.round(Math.min(maxW, maxH * r));
+    h = Math.round(w / r);
+  } else {
+    w = Math.round(Math.min(innerWidth * 0.96, (innerHeight - 100) * r, 1100));
+    h = Math.round(w / r);
+  }
+  wrap.style.width=w+'px'; wrap.style.height=h+'px'; wrap.style.setProperty('--c',(w/100)+'px');
+  return {w,h};
+}
+function update(i){
+  cur=i; $('count').textContent=(i+1)+' / '+pages.length;
+  $('prev').disabled=i<=0; $('next').disabled=i>=pages.length-1;
+  wrap.querySelectorAll('.page').forEach((p,n)=>p.classList.toggle('on',n===i));
+}
+function build(at=0){
+  if(pf){try{pf.destroy()}catch(e){}}
+  mode=pick(); wrap.className=mode;
+  wrap.innerHTML='<div id="book"></div>'; const b=$('book'); b.innerHTML=pages.join('');
+  const {w,h}=size();
+  // container is exactly one page wide, so the library shows a single page at a time
+  pf=new St.PageFlip(b,{width:w,height:h,size:'fixed',showCover:false,usePortrait:true,
+    mobileScrollSupport:false,maxShadowOpacity:.4,flippingTime:reduce?200:900,swipeDistance:20,clickEventForward:true});
+  pf.loadFromHTML(b.querySelectorAll('.page'));
+  pf.on('flip',e=>update(e.data));
+  pf.on('changeState',e=>{ busy=e.data!=='read'; wrap.classList.toggle('busy',busy); });
+  if(at) pf.turnToPage(at);
+  update(at);
+}
+function start(){ $('intro').hidden=true; $('stage').hidden=false; build(); }
+
+$('open').onclick=()=>{
+  $('intro').classList.add('opening');
+  setTimeout(()=>$('intro').style.opacity=0,reduce?0:550);
+  setTimeout(start,reduce?0:900);
+};
+$('prev').onclick=()=>pf&&!busy&&pf.flipPrev();
+$('next').onclick=()=>pf&&!busy&&pf.flipNext();
+wrap.addEventListener('click',e=>{ if(e.target.closest('.again')&&pf) pf.flip(0); });
+addEventListener('keydown',e=>{
+  if(!pf||$('stage').hidden||busy||e.repeat) return;
+  if(e.key==='ArrowRight') pf.flipNext(); else if(e.key==='ArrowLeft') pf.flipPrev();
+});
+let tmr; addEventListener('resize',()=>{
+  if(!pf) return; clearTimeout(tmr);
+  tmr=setTimeout(()=>{
+    const m=pick();
+    const {w,h}=size();
+    if(m!==mode||Math.abs(w-wrap.clientWidth)>3||Math.abs(h-wrap.clientHeight)>3) build(cur);
+  },200);
+});
+</script>
+</body>
+</html>
